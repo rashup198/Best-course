@@ -7,15 +7,17 @@ import { toast } from "react-toastify";
 
 function App () {
 
-  const [curses, setCourses] = useState()
+  const [courses, setCourses] = useState(null)
   useEffect(()=>{
     const fetchData=  async()=>{
       try {
         const res= await fetch(apiUrl);
-        const data = await res.json();
+        const output = await res.json();
 
         //save data into a variable
-        console.log(data);
+        setCourses(output.data);
+        console.log("courses value");
+        console.log(courses);
       } catch (error) {
         toast.error("something went wrong")
       }
@@ -30,7 +32,7 @@ function App () {
 
       <Filter filterData={filterData}></Filter>
 
-      <Cards></Cards>
+      <Cards courses={courses}></Cards>
     </div>
   );
 };
