@@ -4,10 +4,10 @@ const Filter = ({filterData}) => {
   return (
     <div>
       {filterData.map((data)=>{
-        <button>
+        return(<button>
             {data.title};
-        </button>
-      })}
+        </button>)
+      } )}
     </div>
   )
 }
