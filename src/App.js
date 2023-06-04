@@ -18,7 +18,7 @@ function App () {
         const output = await response.json();
 
         //save data into a variable
-        setCourses(output);
+        setCourses(output.data);
         console.log("courses value");
         console.log(courses);
       } catch (error) {
