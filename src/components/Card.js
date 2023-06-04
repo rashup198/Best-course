@@ -1,22 +1,23 @@
 import React from 'react'
 import { FcLike } from "react-icons/fc";
 
-const Card = ({course}) => {
+const Card = (props) => {
+  let course= props.course;
   return (
-    <div>
-      <div>
-        <img src={course.image.url}></img>
+   <div>
         <div>
-            <button>
-                <FcLike fontSize="1.75rem"></FcLike>
-            </button>
+          <img src={course.image.url}></img>
         </div>
-      </div>
-      <div>
-        <p>{course.title}</p>
-        <p>{course.description}</p>
-      </div>
-    </div>
+        <div>
+          <button>
+            <FcLike></FcLike>
+          </button>
+        </div>
+        <div>
+          <p>{course.title}</p>
+          <p>{course.description}</p>
+        </div>
+   </div>
   )
 }
 
