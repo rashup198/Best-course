@@ -3,9 +3,9 @@ import './spinner.css'
 
 const Spinner = () => {
   return (
-    <div>
+    <div className='flex flex-col items-center space-y-2 '>
       <div className='spinner'></div>
-      <p>Loading.....</p>
+      <p className='text-black text-lg font-semibold'>Loading.....</p>
     </div>
   )
 }
