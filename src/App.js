@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 import Spinner from "./components/Spinner";
 function App () {
 
-  const[courses,setCourses]=useState(null);
+  const[courses,setCourses]=useState([]);
   const[loading, setLoading]= useState(true);
 
 
@@ -35,20 +35,24 @@ function App () {
 
 
   return(
-    <div>
+    <div  className="min-h-screen flex flex-col ">
     <div>
       <Navbar></Navbar>
     </div>
+
+    <div className="bg-bgDark2">
     <div>
       <Filter filterData={filterData}></Filter>
     </div>
-
-    <div>
+    <div className="w-11/12 max-w-[1200px] mx-auto flex flex-wrap justify-center items-center min-h-[50vh]">
       {
         loading?(<Spinner></Spinner>) : (<Cards courses={courses}></Cards>)
       }
       
     </div>    
+
+    </div>
+
 
     </div>
   );
